@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Products from "./pages/Products";
@@ -15,8 +16,10 @@ const App = () => {
         <Route path="/viewblog/:id" element={<ViewBlog />} />
         
       </Routes>
+       <Footer />
     </div>
   );
+  
 };
 
 export default App;
