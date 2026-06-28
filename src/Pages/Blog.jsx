@@ -4,14 +4,8 @@ import blogs from '../Data'
 
 function Blogs() {
 
-
-
-
-
-
-
     return (
-        <div className='grid grid-cols-3 ml-20'>
+        <div className='grid grid-cols-3 mr-10'>
             {
                 blogs.map((one)=>{
                     return (
@@ -29,7 +23,7 @@ function Blogs() {
               <p className="text-gray-500 text-sm">{one.postedAt}</p>
 
               <button className="mt-4 w-full rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-black hover:text-white">
-                <Link to={`/viewblog/${one.id}`}>View Detail</Link>
+                <Link to={`/viewblog/${one.id}`}>View </Link>
               </button>
 
             </div>

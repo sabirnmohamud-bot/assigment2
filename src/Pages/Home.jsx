@@ -1,5 +1,11 @@
-function Home() {
-  return <h1>Home Page</h1>;
-}
+import Hero from "../components/Hero";
+import Products from "../JS/ProductsData";
+const Home = () => {
+  return (
+    <div>
+      <Hero Products={Products} />
+    </div>
+  );
+};
 
 export default Home;
