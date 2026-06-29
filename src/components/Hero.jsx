@@ -1,4 +1,20 @@
-const Hero = ({ Products = [] }) => {
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+
+const Hero = () => {
+
+    const [product, setProduct] = useState([]);
+      const getProduct = () => {
+        axios.get("https://fakestoreapi.com/products").then((res) => {
+          setProduct(res.data[2]);
+        });
+      };
+    
+      useEffect(() => {
+        getProduct();
+      }, []);
+
   return (
     <section className="min-h-screen flex items-center justify-between px-10 md:px-20 bg-gradient-to-r from-gray-100 to-gray-200">
       
@@ -38,11 +54,15 @@ const Hero = ({ Products = [] }) => {
       <div className="hidden md:flex w-1/2 justify-center">
         <div className="relative">
           
-          <img
-            src={Products?.[0]?.image}
+          {
+            product && (
+              <img
+            src={product.image}
             alt="hero product"
             className="w-[350px] md:w-[420px] h-[420px] object-cover rounded-3xl shadow-2xl hover:scale-105 transition duration-300"
           />
+            )
+          }
 
           {/* badge */}
           <div className="absolute -bottom-5 -left-5 bg-white px-4 py-2 rounded-xl shadow-md text-green-600 font-bold">
